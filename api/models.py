@@ -32,8 +32,8 @@ class Movies(models.Model):
         on_delete=models.CASCADE,
         related_name="movie"     
     )
-    # CASCADE indica que si se borra la BASE de la pelicula
-    # la pelicula tambien se borre
+    # CASCADE indica que si se borra la PELICULA
+    # la BASE tambien se borre
     # related_name es para poder acceder a la pelicula como base.movie
     year = models.IntegerField()
     director = models.CharField(max_length=150)

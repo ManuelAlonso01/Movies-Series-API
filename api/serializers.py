@@ -96,3 +96,24 @@ class SerieCreateSerializer(serializers.Serializer):
             episodes_count = valited_data["episodes_count"],
         )
         return serie
+
+class MovieUpdateSerializer(serializers.Serializer):
+    title = serializers.CharField(required=False)
+    genres = serializers.ListField(
+        child = serializers.CharField(),
+        required = False
+    )
+    year = serializers.IntegerField(required=False)
+    director = serializers.CharField(required=False)
+    duration_minutes = serializers.IntegerField(required=False)
+    
+class SerieUpdateSerializer(serializers.Serializer):
+    title = serializers.CharField(required=False)
+    genres = serializers.ListField(
+        child = serializers.CharField(),
+        required = False
+    )
+    start_year = serializers.IntegerField(required=False)
+    end_year = serializers.IntegerField(required=False)
+    season_count = serializers.IntegerField(required=False)
+    episodes_count = serializers.IntegerField(required=False)
